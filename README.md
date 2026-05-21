@@ -1,32 +1,14 @@
 # Data Collection Script
 
-This script monitors resource utilization (CPU and RAM) of a PHP process while making requests to a Grocy API.
+This script monitors resource utilization (CPU and RAM) of the locally running Grocy PHP process while making requests to a Grocy API.
 
-## Prerequisites
+## How to run
 
-- Python 3.x
-- pip package manager
-
-## Installation
-
-1. Clone this repository
-2. Install required Python packages:
-   ```
-   pip install requests psutil
-   ```
-
-## Configuration
-
-Create a `.env` file in the project root with your API key:
+1. Go to the [Grocy GitHub repo](https://github.com/grocy/grocy) and download the latest release
+2. Unzip and run command `php –S localhost:8000 –t public` in the project root
+3. In a new terminal, run the script
 ```
-API_KEY=your_grocy_api_key_here
-```
-
-## Usage
-
-Run the script:
-```
-python resource_utilization_script.py
+python resource_utilization_script.py > output.txt
 ```
 
 The script will:
@@ -37,6 +19,6 @@ The script will:
 
 ## Output
 
-The script prints:
+The script outputs:
 - Per-request CPU usage, RAM usage, and HTTP status code
 - Final statistics: peak and average CPU/RAM across all requests
